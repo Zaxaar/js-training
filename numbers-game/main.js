@@ -30,19 +30,23 @@
     showElement(gameplayScreen);
 
     gameResult.innerHTML = "<p>Choose yor number!</p>";
+    userAnswer.value = ''
 
-    checkAnswerBtn.addEventListener('click', function(){
-        if(userAnswer.value == secretElement) {
-          gameResult.innerHTML = "<p> You Won! Secret number is " + secretElement + "!</p>";
-          hideElement(gameplayScreen);
-          showElement(startScreen);
-          alert("You Won! The secret number is " + secretElement)
-        } else if (userAnswer.value > secretElement) {
-          gameResult.innerHTML = "<p> Your number is too high!</p>";
-        } else if (userAnswer.value < secretElement) {
-          gameResult.innerHTML = "<p> Your number is too low!</p>";
-        }
-      })
+    checkAnswerBtn.addEventListener('click', checkAnswer);
+
+    function checkAnswer(){
+      if(userAnswer.value == secretElement) {
+        gameResult.innerHTML = "<p> You Won! Secret number is " + secretElement + "!</p>";
+        hideElement(gameplayScreen);
+        showElement(startScreen);
+        alert("You Won! The secret number is " + secretElement)
+        checkAnswerBtn.removeEventListener('click', checkAnswer);  
+      } else if (userAnswer.value > secretElement) {
+        gameResult.innerHTML = "<p> Your number is too high!</p>";
+      } else if (userAnswer.value < secretElement) {
+        gameResult.innerHTML = "<p> Your number is too low!</p>";
+      }
+    }
   }
 
     function showElement(element) {
