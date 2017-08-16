@@ -1,0 +1,11 @@
+#start-screen {
+
+}
+
+#start-screen .input-group {
+  padding-bottom:10px;
+}
+
+#gameplay-screen {
+  display: none;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Guess a number</title>
+  <meta name="description" content="">
+  <meta name="author" content="Michal Zacharzewski">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/main.css">
+  <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+  <header class="container-fluid text-center" >
+    <h1>Guess a number!</h1>
+  </header>
+
+
+
+  <main class="container" >
+
+    <div id="start-screen" class="row">
+      <div class="col-md-6">
+        <h4><small>Select </small></h4>
+        <p><small>Choose ...</small></p>
+
+        <div class="input-group ">
+          <span id="inp-min"class="input-group-addon">Minimum value</span>
+          <input id="min-value" class="form-control" type="number" aria-describedby="inp-min">
+        </div>
+
+        <div class="input-group ">
+          <span id="inp-max" class="input-group-addon">Maximum value</span>
+          <input id="max-value" class="form-control" type="number" aria-describedby="inp-max" >
+        </div>
+        <button id="start-game" class="btn btn-info btn-block">Start Game</button>
+
+      </div>
+    </div>
+
+    <div id="gameplay-screen" class="gameplay-screen row">
+      <div class="col-md-6">
+        <h4><small>We are siniking...</small></h4>
+        <p><small>What are you sinikng about?</small></p>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon" id="user-input">Your guess</span>
+          <input id="user-answer" type="number" class="form-control" aria-describedby="user-input">
+          <span class="input-group-btn">
+            <button id="check-answer" class="btn btn-info">Check this out!</button>
+          </span>
+        </div>
+
+        <div id="game-result"> </div>
+    </div>
+
+    <div id="game-result" class="game-board row">
+
+    </div>
+  </main>
+
+  <footer class="container-fluid text-center" >
+    <h5>Michał Zacharzewski</h5>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="main.js">
+  </script>
+</body>
+
+</html>
