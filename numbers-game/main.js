@@ -30,7 +30,7 @@
     showElement(gameplayScreen);
 
     gameResult.innerHTML = "<p>Choose yor number!</p>";
-    userAnswer.value = ''
+    userAnswer.value = '';
 
     checkAnswerBtn.addEventListener('click', checkAnswer);
 
@@ -39,8 +39,8 @@
         gameResult.innerHTML = "<p> You Won! Secret number is " + secretElement + "!</p>";
         hideElement(gameplayScreen);
         showElement(startScreen);
-        alert("You Won! The secret number is " + secretElement)
-        checkAnswerBtn.removeEventListener('click', checkAnswer);  
+        alert("You Won! The secret number is " + secretElement);
+        checkAnswerBtn.removeEventListener('click', checkAnswer);
       } else if (userAnswer.value > secretElement) {
         gameResult.innerHTML = "<p> Your number is too high!</p>";
       } else if (userAnswer.value < secretElement) {
