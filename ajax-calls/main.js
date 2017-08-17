@@ -57,7 +57,34 @@ $(document).ready(function() {
     });
   }());
 
+  (function(){
+    var $users = $('.users');
+    $.ajax({
+        url: 'https://randomuser.me/api',
+        dataType: 'json',
+        method: 'GET',
+        success: function(data) {
+          console.log(data.status);
+          var user = data.results[0];
+          var $row = $('<div/>' , {class: 'row'});
+          var $imgCol = $('<div/>' , {class: 'col-md-4'});
+          var $textCol = $('<div/>' , {class: 'col-md-8'});
+          var $userImage = $('<img/>', {class: 'img-circle img-responsive', src: user.picture.medium });
+          var $userName = $('<h3/>').text(`${user.name.title} ${user.name.first} ${user.name.last}`);
 
+          $users.append($row);
+          $row.append($imgCol);
+          $row.append($textCol);
+          $imgCol.append($userImage);
+          $textCol.append($userName);
+
+        },
+        error: function(response) {
+          console.log('Sample user data - ooops something goes wrong!');
+          console.log(response.status, response.statusText);
+        }
+    });
+  }());
 
 
 })
