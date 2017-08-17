@@ -23,29 +23,41 @@
   }
 }());
 
-(function(){
+$(document).ready(function() {
 
-  $.ajax({
-      url: 'https://monuments-data.herokuapp.com/api/monuments',
-      dataType: 'json',
-      method: 'GET',
-      data: {
-          login: 'test33',
-          id: 5
-      },
-      success: function(response) {
-          console.log(response);
-          console.log(response.status);
+  (function(){
+    var $monumetsPhotos = $('.monument-photos');
+    $.ajax({
+        url: 'https://monuments-data.herokuapp.com/api/monuments',
+        dataType: 'json',
+        method: 'GET',
+        data: {
+            login: 'test33',
+            id: 5
+        },
+        success: function(response) {
+            console.log(response);
+            console.log(response.status);
 
-          for (var item of response) {
-            $('.monument-photos').append(
-              '<div class="col-md-12 text-center"><h5>'+ item.name + '</h5><br><img style="max-width:50%"src='+ item.imageUrl +'><hr></div>');
-          }
-      },
-      error: function(response) {
-        console.log('Ooops something goes wrong!');
-        console.log(response.status, response.statusText);
-      }
-  });
+            for (var item of response) {
+              var div = $('<div/>', { class: "col-md-12 text-center" });
+              $('<h5/>').html(item.name).appendTo(div);
+              $('<img/>', { src: item.imageUrl }).appendTo(div);
+              $('<br/>').appendTo(div);
+              $('<hr/>').appendTo(div);
+              $monumetsPhotos.append(div);
+              //$monumetsPhotos.append('<div class="col-md-12 text-center"><h5>'+ item.name + '</h5><br><img style="max-width:50%"src='+ item.imageUrl +'><hr></div>');
 
-}());
+            }
+        },
+        error: function(response) {
+          console.log('Ooops something goes wrong!');
+          console.log(response.status, response.statusText);
+        }
+    });
+  }());
+
+
+
+
+})
