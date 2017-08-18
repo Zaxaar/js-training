@@ -2,7 +2,7 @@ var app = angular.module('tempConverter', []);
 
 app.controller('mainController', function($scope){
 
-  $scope.showMessage = function() {
+  $scope.convertTemp = function() {
 
     if($scope.temperature) {
       if ($scope.tempUnit === 'C') {
