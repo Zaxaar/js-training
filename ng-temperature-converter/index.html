@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" ng-app="trainingApp">
+<html lang="pl" ng-app="tempConverter">
 
 <head>
   <meta charset="utf-8">
-  <title>Angular Training</title>
+  <title>Temperature Converter</title>
   <meta name="description" content="">
   <meta name="author" content="Michal Zacharzewski">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,30 +17,30 @@
 
 <body>
   <header class="container-fluid text-center" >
-    <h1>Angular JS</h1>
+    <h1>Temperature Converter</h1>
   </header>
 
 
-  <div ng-controller="firstController" class="container">
-    <p>{{ message }}</p>
-    <div ng-controller="childController">
-      <p>{{ message }} &bull; {{ $parent.message }}</p>
-      <button ng-click="showMessage()" class="selected btn btn-primary">Show Message</button>
-      <button ng-click="showShortMessage()" class="btn btn-info">Show Short Message</button>
-      <button ng-click="showCapitalizedMessage()" class="btn btn-danger">Show Capitalized Message</button>
-      <ul>
-        <li ng-repeat="color in colors"> {{ color }} </li>
-      </ul>
+  <div ng-controller="mainController" class="container text-center temp-converter">
+    <div class="row">
+      <div class="col-md-12">
 
-      <ol>
-        <li ng-repeat="user in users"> {{ user.name }}</li>
-      </ol>
+      <select ng-model="tempUnit" id="temp-input-unit">
+          <option value="C" sselected="selected">&deg;C</option>
+          <option value="F">&deg;F</option>
+          <option value="K">K</option>
+      </select>
 
-      <hr>
+        <input ng-model="temperature" type="number" >
+        <button ng-click="showMessage()" class="btn btn-danger"> Convert </button>
+      </div>
 
-      <input type="text" ng-model="napis">
-      <p>{{ napis | uppercase}}</p>
-      <button ng-click="showModel()">Show Model</button>
+      <div class="col-md-12">
+        <p>&deg;C {{ tempValues.C }}</p>
+        <p>&deg;F {{ tempValues.K }}</p>
+        <p>K {{ tempValues.K }}</p>
+      </div>
+
     </div>
   </div>
 

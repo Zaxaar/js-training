@@ -1,4 +1,4 @@
-var app = angular.module('trainingApp', []);
+var app = angular.module('tempConverter', []);
 
 app.controller('firstController', function($scope){
   $scope.message = "First Controller Message!";
