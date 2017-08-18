@@ -35,9 +35,9 @@
       </div>
 
       <div class="col-md-12">
-        <p>&deg;C {{ tempValues.C }}</p>
-        <p>&deg;F {{ tempValues.K }}</p>
-        <p>K {{ tempValues.K }}</p>
+        <p ng-show="C">&deg;C {{ C | number : 2 }}</p>
+        <p ng-show="F">&deg;F {{ F | number : 2 }}</p>
+        <p ng-show="K">K {{ K | number : 2 }}</p>
       </div>
 
     </div>

@@ -4,22 +4,22 @@ app.controller('mainController', function($scope){
 
   $scope.convertTemp = function() {
 
-    if($scope.temperature) {
+    if($scope.temperature || $scope.temperature === 0 ) {
       if ($scope.tempUnit === 'C') {
-        $scope.tempValues.F = $scope.temperature * 9/5+32;
-        $scope.tempValues.K = $scope.temperature + 273.15;
-        $scope.tempValues.C = $scope.temperature;
+        $scope.F = ($scope.temperature * 9/5+32);
+        $scope.K = $scope.temperature + 273.15;
+        $scope.C = false
       }
 
       else if ($scope.tempUnit === 'F') {
-        $scope.tempValues.C = ($scope.temperature -32)*5/9;
-        $scope.tempValues.K = ($scope.temperature)* 5/9;
-        $scope.tempValues.F = $scope.temperature;
+        $scope.C = ($scope.temperature -32)*5/9;
+        $scope.K = ($scope.temperature)* 5/9;
+        $scope.F = false
       }
       else if ($scope.tempUnit === 'K') {
-        $scope.tempValues.C = $scope.temperature - 273.15;
-        $scope.tempValues.F = $scope.temperature * 9/5 - 459.67;
-        $scope.tempValues.K = $scope.temperature;
+        $scope.C = $scope.temperature - 273.15;
+        $scope.F = $scope.temperature * 9/5 - 459.67;
+        $scope.K = false
       }
     }
     else{alert("Write some valid value.")}
