@@ -17,12 +17,22 @@ app.config(function($routeProvider){
 
 app.service('task', function(){
   this.tasks = [];
+  this.counter = this.tasks.length + 1;
 
   this.addTask = function(task){
+    task.id = this.counter++;
     this.tasks.push(task);
   }
   this.showTasks = function() {
     return this.tasks;
+  }
+  this.removeTask = function(id) {
+    for(var i = 0; i < this.tasks.length; i++) {
+      if(this.tasks[i].id == id) {
+      break;
+      }
+    }
+    this.tasks.splice(i, 1);
   }
 })
 
@@ -34,4 +44,8 @@ app.controller('addTaskController', function($scope, task) {
 
 app.controller('showTaskListController', function($scope,task ) {
   $scope.tasks = task.showTasks();
+
+  $scope.removeTask = function(id) {
+    task.removeTask(id);
+  }
 })
