@@ -1,0 +1,56 @@
+body {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  letter-spacing: 1px;
+  color: ;
+}
+
+.container {
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+
+p {
+  font-size: 1.4em;
+  font-weight: 300;
+  line-height: 1.5em;
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 2.6em;
+  font-weight: 800;
+}
+
+header,
+footer {
+  padding: 25px 0;
+  color: #FFF;
+  background-color:#0b99ff
+}
+
+#main-nav ul {
+  list-style: none;
+}
+
+#main-nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#add-button {
+  margin: 10px;
+}
+
+.intro {
+  padding: 10px 0 30px;
+}
+
+.input-fields input {
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.movie-list {
+  list-style: none;
+}

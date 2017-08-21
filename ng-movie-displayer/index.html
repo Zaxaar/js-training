@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl" ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Movie Displayer</title>
+  <meta name="description" content="">
+  <meta name="author" content="Michal Zacharzewski">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+  <header class="container-fluid text-center" >
+    <h1>Movie Displayer</h1>
+  </header>
+
+  <nav id="main-nav" class="container text-center">
+      <ul>
+        <li><a href="#!">main</a></li>
+        <li><a href="#!/add">add movie</a></li>
+        <li><a href="#!/show">show movie</a></li>
+      </ul>
+  </nav>
+
+  <div ng-view> </div>
+
+  <footer class="container-fluid text-center" >
+    <h5>Angular JS</h5>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.6.5/angular-route.min.js"></script>
+  <script src="./js/app.js">
+</body>
+
+</html>
