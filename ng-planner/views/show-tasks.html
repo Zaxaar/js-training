@@ -3,7 +3,8 @@
     <div class="row" ng-repeat="task in tasks">
         <h4>{{ task.name }}</h4>
         <p>{{ task.description }}</p>
-        <button class="btn btn-info" ng-click="removeTask(task.id)"> <i class="ion-ios-close-empty"></i></button>
+        <button class="btn btn-warning" ng-click="removeTask(task.id)"> <i class="ion-android-delete"></i></button>
+        <a href="#!/edit-task/{{task.id}}" class="btn btn-info"><i class="ion-android-create"></i></a>
         <hr>
     </div>
 </div>
