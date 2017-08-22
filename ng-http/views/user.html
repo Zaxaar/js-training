@@ -3,9 +3,10 @@
       <h3> {{user.name}} {{user.lastname}}</h3>
   </div>
 
+  <div class="row" ng-include="'./views/edit-user.html'">
+  </div>
+
   <div class="row">
       <button class="btn btn-info" ng-click="backlink()"> return to list </button>
   </div>
-
-
 </div>

@@ -42,7 +42,6 @@ app.controller('firstController', function($scope, $http, $filter) {
       console.log('delete error', error);
     });
   }
-
 })
 
 app.controller('secondController', function($scope, $http, $routeParams, $location) {
@@ -54,6 +53,8 @@ app.controller('secondController', function($scope, $http, $routeParams, $locati
   }, function(error) {
     console.warn(error)
   })
+
+
 
   $scope.backlink = function(){
     $location.path('/users')
@@ -91,5 +92,24 @@ app.controller('fourthController', function($scope, $http) {
       console.log(error);
     }
   }
+})
 
+app.controller('fifthController', function($scope, $http) {
+
+  $scope.editUser = function(id) {
+
+    $http({
+      url: 'http://localhost:3000/users/' + id,
+      method: 'PATCH',
+      data: {
+        name: $scope.user.name,
+        lastname: $scope.user.lastname
+      }
+    }).then(function(success){
+      console.log(success.data);
+
+    }), function(error) {
+      console.log(error);
+    }
+  }
 })
