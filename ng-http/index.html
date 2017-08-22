@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl" ng-app="webApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular HTTP Connection</title>
+  <meta name="description" content="">
+  <meta name="author" content="Michal Zacharzewski">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+  <nav id="main-navigation" class="navbar navbar-default">
+    <div class="container">
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#!"> Name&Logo </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#!/users">users</a></li>
+        <li><a href="#!/animals">animals</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" ng-view>
+
+  </div>
+
+
+  <footer class="container-fluid text-center" >
+    <h5>Angular JS / HTTP</h5>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.6.5/angular-route.min.js"></script>
+  <script src="./js/app.js">
+</body>
+
+</html>
