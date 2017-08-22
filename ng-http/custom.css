@@ -36,3 +36,10 @@ footer {
 #main-navigation a {
   color: rgb(255, 255, 255);
 }
+
+.add-input {
+  display: block;
+  margin: 15px auto;
+  min-width: 350px;
+  min-height: 35px;
+}
