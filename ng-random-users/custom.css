@@ -25,10 +25,22 @@ header,
 footer {
   padding: 25px 0;
   color: #FFF;
-  background-color:#009cff
+  background-color:#147f90
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 header button {
   margin: 5px;
+}
 
+footer span {
+  font-size: 14px;
+}
+
+table td img {
+  border-radius: 5px;
 }

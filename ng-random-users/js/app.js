@@ -7,8 +7,13 @@ app.controller('mainController', function($scope, $http) {
   $scope.users = [];
   $scope.numberOfUsers = 10;
 
-  $scope.makeUser = function(firstname, lastname){
-    return {firstName: firstname, lastName: lastname}
+  $scope.makeUser = function(firstname, lastname, avatar){
+    return {firstName: firstname, lastName: lastname, avatar: avatar}
+  }
+
+  $scope.chooseAvatar = function(userFullName) {
+      var magicNumber = userFullName.length % 10;
+      return  `./avatars/${magicNumber}.jpg`;
   }
 
   $scope.displayUsers  = function(sex) {
@@ -25,8 +30,9 @@ app.controller('mainController', function($scope, $http) {
       var userLastNames = $scope.resources[userSex + '_lastname'];
       var userFirstName = userNames[Math.ceil(Math.random() * userNames.length) - 1];
       var userLastName = userLastNames[Math.ceil(Math.random() * userLastNames.length) - 1];
+      var userAvatar = $scope.chooseAvatar(userFirstName + userLastName);
 
-      $scope.users.push($scope.makeUser(userFirstName, userLastName));
+      $scope.users.push($scope.makeUser(userFirstName, userLastName, userAvatar));
     }
   }
 
