@@ -25,9 +25,9 @@ app.controller('firstController', function($scope, $http, $filter) {
     url: "http://localhost:3000/users",
   }).then(function(succes) {
     $scope.users = succes.data;
-    console.log(succes.data);
+    console.log('firstController GET success:', succes.data);
   }, function(error) {
-    console.error(error);
+    console.error('firstController GET error:',error);
   });
 
   $scope.deleteUser = function(id) {
@@ -35,11 +35,11 @@ app.controller('firstController', function($scope, $http, $filter) {
       url: "http://localhost:3000/users/" + id,
       method: "DELETE"
     }).then(function(success){
-      console.log('delete success!', success);
+      console.log('secondController DELETE success:', success);
       var deletedUser = $filter('filter')($scope.users, {id: id})[0];
       $scope.users.splice($scope.users.indexOf(deletedUser),1);
     }, function(error) {
-      console.log('delete error', error);
+      console.log('secondController DELETE error:', error);
     });
   }
 })
@@ -54,8 +54,6 @@ app.controller('secondController', function($scope, $http, $routeParams, $locati
     console.warn(error)
   })
 
-
-
   $scope.backlink = function(){
     $location.path('/users')
   }
@@ -67,9 +65,9 @@ app.controller('thirdController', function($scope, $http) {
     url: "http://localhost:3000/animals/"
   }).then(function(succes) {
       $scope.animals = succes.data;
-      console.log(succes.data);
+      console.log('thirdController GET success:', succes.data);
   }, function(error) {
-    console.warn(error)
+    console.warn('thirdController GET success:', error)
   })
 })
 
@@ -84,12 +82,12 @@ app.controller('fourthController', function($scope, $http) {
         lastname: $scope.lastname
       }
     }).then(function(success){
-      console.log(success.data);
+      console.log('fourthController POST success:',success.data);
       $scope.users.push(success.data);
       $scope.name = '';
       $scope.lastname = '';
     }), function(error){
-      console.log(error);
+      console.log('fourthController POST error:', error);
     }
   }
 })
@@ -97,7 +95,6 @@ app.controller('fourthController', function($scope, $http) {
 app.controller('fifthController', function($scope, $http) {
 
   $scope.editUser = function(id) {
-
     $http({
       url: 'http://localhost:3000/users/' + id,
       method: 'PATCH',
@@ -106,10 +103,10 @@ app.controller('fifthController', function($scope, $http) {
         lastname: $scope.user.lastname
       }
     }).then(function(success){
-      console.log(success.data);
+      console.log('fifthController PATCH success:', success.data);
 
     }), function(error) {
-      console.log(error);
+      console.log('fifthController PATCH error:', error);
     }
   }
 })
