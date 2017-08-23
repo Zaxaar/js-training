@@ -1,0 +1,34 @@
+body {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  letter-spacing: 1px;
+  color: rgb(65, 65, 65)
+}
+
+.container {
+  padding-top:15px;
+  padding-bottom: 15px;
+}
+
+p {
+  font-size: 1.4em;
+  font-weight: 300;
+  line-height: 1.5em;
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 2.6em;
+  font-weight: 800;
+}
+
+header,
+footer {
+  padding: 25px 0;
+  color: #FFF;
+  background-color:#009cff
+}
+
+header button {
+  margin: 5px;
+
+}
